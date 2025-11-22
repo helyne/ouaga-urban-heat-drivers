@@ -42,6 +42,13 @@ Surface reflectance and surface temperature products (30 m) from Landsat-8 and S
 ### The analysis methods
 We will apply a machine learning approach to examine the precise spatial drivers of intra-urban heat patterns during extreme events and then test whether these drivers are consistent across two different urban environments. The study will replicate the XGBoost and SHAP analysis framework from Hoang et al. (2025) for Da Nang, Vietnam in 2024, and adapt it for the novel context of Ouagadougou, Burkina Faso, a rapidly urbanizing Sahelian city that also experienced severe heatwave events in 2024. We will test the generalizability of urban heat drivers by comparing the results from Ouagadougou with the published results from Da Nang, Vietnam. To build upon the work by Hoang, a causal model with pre-hoc weight assignment will be implemented before the training as in Yeboah et al. (2025), providing greater explanatory power to the study.
 
+General method details:
+- Heatwave events defined via ETCCDI indices (TX90p, WSDI).
+- Anomalies computed vs. rural reference areas.
+- Predictors: NDVI, NDBI, MNDWI, slope/elevation, green density, built-up share, distance to roads/water, population.
+- Models: XGBoost + RF (stratified cross-validation, SHAP interpretability); pre-hoc causal model with weight assignment.
+
+### Heat risk map
 To test mitigation policies, we will digitally alter Ouagadougou's input maps - for example, artificially increasing the 'green space density' value by 10% in the city center - and then feed this modified map into our already-trained model to generate a new heat risk forecast. Comparing this new forecast to the original map will show us exactly how much and where the heat risk would be modified by an intervention.
 
 
