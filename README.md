@@ -7,13 +7,13 @@
 ## Presentations
 
 
-# Research question/objective
+## Research question/objective
 
 - How transferable are the drivers of urban heat islands across diverse climatic and urban contexts?
 - Are the factors that drive extreme heat universal, or are they specific to a city's geography, climate, and development pattern?
 
 
-# Background/Motivation
+## Background/Motivation
 
 This comparative study replicates the methodology of the Da Nang study in Vietnam and applies it to Ouagadougou, Burkina Faso, to investigate urban heat hotspots in a Sahelian urban context. Specifically, it aims to evaluate the effectiveness of machine learning models in identifying hotspots during heatwave events, determine the most influential environmental and urban factors driving hotspot formation, and directly compare these results with those from Da Nang to evaluate which patterns are consistent and which differ due to Ouagadougou’s specific climate and urban structure.
 
@@ -22,11 +22,11 @@ The study is modeled after and builds upon the work by Hoang et al. (2025).
 Hoang, ND., Huynh, TC. & Bui, DT. An interpretable machine learning framework for mapping hotspots and identifying their driving factors in urban environments during heat waves. Environ Monit Assess 197, 1017 (2025). https://doi.org/10.1007/s10661-025-14461-0
 
 
-# Data
+## Data
 
 
 
-# Methods/Approach
+## Methods/Approach
 
 ### The study area
 We selected the capital city of Ouagadougou, Burkina Faso, a major urban center in West Africa's Sahel region, as our comparative study area. Crucially, Ouagadougou shares key characteristics with Da Nang (e.g. similar latitude, population size, and a significant March-May 2024 heatwave), while representing a starkly different environment. Unlike coastal Da Nang's humid climate, Ouagadougou's semi-arid inland conditions create a climatic contrast, allowing us to investigate which urban heat drivers are universal or context-specific. This comparison can reveal how local climate modulates urban heat island effects.
@@ -45,7 +45,7 @@ We will apply a machine learning approach to examine the precise spatial drivers
 To test mitigation policies, we will digitally alter Ouagadougou's input maps - for example, artificially increasing the 'green space density' value by 10% in the city center - and then feed this modified map into our already-trained model to generate a new heat risk forecast. Comparing this new forecast to the original map will show us exactly how much and where the heat risk would be modified by an intervention.
 
 
-# Literature 
+## Literature 
 
 Hoang, ND., Huynh, TC. & Bui, DT. An interpretable machine learning framework for mapping hotspots and identifying their driving factors in urban environments during heat waves. Environ Monit Assess 197, 1017 (2025). https://doi.org/10.1007/s10661-025-14461-0
 
