@@ -1,1 +1,2 @@
-.DS_Store
+# Ignore macOS file for folder customization attributes
+**/.DS_Store
