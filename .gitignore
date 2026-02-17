@@ -1,3 +1,22 @@
 # Ignore macOS files for folder customization attributes
 .DS_Store
 **/.DS_Store
+
+# Data and reference materials
+data/
+literature/
+
+# Work in progress and compiled Python files
+wip/
+__pycache__/
+*.pyc
+
+# Cached notebook outputs
+notebooks/cache/
+
+# Meeting recordings and presentation files
+meetings/
+presentations/
+
+# Large binary files
+*.mov
