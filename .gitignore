@@ -4,6 +4,10 @@
 
 # Data and reference materials
 data/
+!data/README.md
+!data/raw/
+data/raw/*
+!data/raw/Shapefile Ouaga/
 literature/
 
 # Work in progress and compiled Python files
