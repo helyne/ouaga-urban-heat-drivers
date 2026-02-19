@@ -2,7 +2,8 @@
 .DS_Store
 **/.DS_Store
 
-# Data and reference materials
+# Data, figures, and reference materials
+figures/
 data/
 !data/README.md
 !data/raw/
@@ -24,3 +25,4 @@ presentations/
 
 # Large binary files
 *.mov
+*.nc
