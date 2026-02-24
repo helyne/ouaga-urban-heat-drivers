@@ -163,10 +163,10 @@ def load_raster_to_dataframe(
 
     info['band_names'] = band_names
 
-    # Find valid pixels (not NaN in any band)
-    valid_mask = ~np.isnan(data_3d[0])
+    # Find valid pixels (finite in all bands — excludes NaN, -inf, +inf)
+    valid_mask = np.isfinite(data_3d[0])
     for i in range(1, data_3d.shape[0]):
-        valid_mask &= ~np.isnan(data_3d[i])
+        valid_mask &= np.isfinite(data_3d[i])
 
     rows, cols = np.where(valid_mask)
     n_valid = len(rows)
