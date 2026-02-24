@@ -4,7 +4,7 @@
 # Single source of truth for all pipeline parameters.
 #
 # HOW TO USE:
-#   from src.processing import load_dataset
+#   from src.data import load_dataset
 #   df, config = load_dataset()
 #
 # This gives you a DataFrame with one row per valid pixel and columns for
@@ -88,7 +88,7 @@ random_state: 42
 
 # -- GEE export (only needed if re-running the processing pipeline) ---------
 # Most people won't need to touch these. They control how data is computed
-# on Google Earth Engine and exported to Google Drive.
+# on Google Earth Engine and downloaded locally.
 
 ee_project: "412303396813"
 ee_boundary_asset: "projects/ee-helyne/assets/Ouaga_boundary"

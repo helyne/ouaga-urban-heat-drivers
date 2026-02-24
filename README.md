@@ -7,6 +7,70 @@
 ## Presentations
 
 
+## Getting started
+
+### Prerequisites
+
+- Python 3.11+
+- A [Google Earth Engine](https://earthengine.google.com/) account (free for research use). See the [GEE access guide](https://developers.google.com/earth-engine/guides/access) and `notebooks/GEE_setup.ipynb` for setup instructions.
+
+### Setup
+
+1. Clone the repository:
+   ```bash
+   git clone <repo-url>
+   cd ouaga-urban-heat-drivers
+   ```
+
+2. Create a virtual environment and install dependencies:
+   ```bash
+   python -m venv .venv
+   source .venv/bin/activate   # On Windows: .venv\Scripts\activate
+   pip install -r requirements.txt
+   ```
+
+3. Authenticate with Google Earth Engine:
+   ```bash
+   earthengine authenticate
+   ```
+   Then initialize with your GEE cloud project ID. See `notebooks/GEE_setup.ipynb` for a detailed walkthrough if this is your first time using GEE.
+
+4. Set up the data. See [`data/README.md`](data/README.md) for full details on data sources, GEE asset setup, and how to regenerate the processed raster stack.
+
+### Project structure
+
+```
+config/
+  processing.yaml    # All pipeline parameters (CRS, scale, dates, thresholds)
+
+src/                 # Reusable Python modules
+  data.py            #   Configuration loading, raster-to-DataFrame conversion
+  pipeline.py        #   GEE feature engineering, stacking, and download
+
+notebooks/           # Analysis notebooks
+  01_processing_pipeline #   GEE computation and raster export
+  02_eda                 #   Exploratory data analysis and validation
+  03_causal_analysis     #   Geographical Convergent Cross-Mapping (GCCM)
+  models                 #   XGBoost, Random Forest, SHAP interpretability
+
+data/
+  raw/               #   Input data (shapefiles, boundary) — treat as read-only
+  processed/         #   Pipeline outputs (raster stack) — reproducible from raw + code
+```
+
+### Loading the data
+
+Once the processed raster exists (either by running the pipeline or obtaining it from a collaborator), load it in any notebook or script:
+
+```python
+from src.data import load_dataset
+
+df, config = load_dataset("config/processing.yaml")
+```
+
+This returns a DataFrame with one row per valid pixel and columns for each band (NDVI, NDBI, BSI, DEM, distance_to_water, distance_to_roads, built_density, green_density, LST, hotspot), plus pixel coordinates (row, col, lon, lat).
+
+
 ## Research question/objective
 
 - How transferable are the drivers of urban heat islands across diverse climatic and urban contexts?
@@ -15,7 +79,7 @@
 
 ## Background/Motivation
 
-This comparative study replicates the methodology of the Da Nang study in Vietnam and applies it to Ouagadougou, Burkina Faso, to investigate urban heat hotspots in a Sahelian urban context. Specifically, it aims to evaluate the effectiveness of machine learning models in identifying hotspots during heatwave events, determine the most influential environmental and urban factors driving hotspot formation, and directly compare these results with those from Da Nang to evaluate which patterns are consistent and which differ due to Ouagadougou’s specific climate and urban structure.
+This comparative study replicates the methodology of the Da Nang study in Vietnam and applies it to Ouagadougou, Burkina Faso, to investigate urban heat hotspots in a Sahelian urban context. Specifically, it aims to evaluate the effectiveness of machine learning models in identifying hotspots during heatwave events, determine the most influential environmental and urban factors driving hotspot formation, and directly compare these results with those from Da Nang to evaluate which patterns are consistent and which differ due to Ouagadougou's specific climate and urban structure.
 
 The study is modeled after and builds upon the work by Hoang et al. (2025).
 
@@ -24,6 +88,16 @@ Hoang, ND., Huynh, TC. & Bui, DT. An interpretable machine learning framework fo
 
 ## Data
 
+See [`data/README.md`](data/README.md) for full details on data sources, licensing, and setup instructions.
+
+| Source | Resolution | Used for |
+|---|---|---|
+| Landsat 8/9 (Collection 2, Level 2) | 30 m | Land Surface Temperature |
+| Sentinel-2 SR Harmonized | 10-20 m | NDVI, NDBI, BSI |
+| Copernicus DEM GLO-30 | 30 m | Elevation |
+| JRC Global Surface Water v1.4 | 30 m | Distance to water |
+| ESA WorldCover 2021 | 10 m | Built-up and green space density |
+| OpenStreetMap | Vector | Distance to roads |
 
 
 ## Methods/Approach
@@ -32,8 +106,7 @@ Hoang, ND., Huynh, TC. & Bui, DT. An interpretable machine learning framework fo
 We selected the capital city of Ouagadougou, Burkina Faso, a major urban center in West Africa's Sahel region, as our comparative study area. Crucially, Ouagadougou shares key characteristics with Da Nang (e.g. similar latitude, population size, and a significant March-May 2024 heatwave), while representing a starkly different environment. Unlike coastal Da Nang's humid climate, Ouagadougou's semi-arid inland conditions create a climatic contrast, allowing us to investigate which urban heat drivers are universal or context-specific. This comparison can reveal how local climate modulates urban heat island effects.
 
 ### Research material
-To characterize heatwave dynamics and intra-urban variations in temperature, we will collect and preprocess a combination of remote sensing and vector-based spatial datasets (summarised in Table 1). We will primarily use satellite imagery from Landsat 8 and Sentinel-2, digital eleva-
-tion data from Copernicus, and road network data extracted from OpenStreetMap.
+To characterize heatwave dynamics and intra-urban variations in temperature, we collect and preprocess a combination of remote sensing and vector-based spatial datasets (summarised in Table 1). We primarily use satellite imagery from Landsat 8 and Sentinel-2, digital elevation data from Copernicus, and road network data extracted from OpenStreetMap.
 
 Table 1 - Research material and data sources
 
@@ -52,7 +125,9 @@ General method details:
 To test mitigation policies, we will digitally alter Ouagadougou's input maps - for example, artificially increasing the 'green space density' value by 10% in the city center - and then feed this modified map into our already-trained model to generate a new heat risk forecast. Comparing this new forecast to the original map will show us exactly how much and where the heat risk would be modified by an intervention.
 
 
-## Literature 
+## Literature
+
+Gao, B., Yang, J., Chen, Z. et al. Causal inference from cross-sectional earth system data with geographical convergent cross mapping. Nat Commun 14, 5875 (2023). https://doi.org/10.1038/s41467-023-41619-6
 
 Hoang, ND., Huynh, TC. & Bui, DT. An interpretable machine learning framework for mapping hotspots and identifying their driving factors in urban environments during heat waves. Environ Monit Assess 197, 1017 (2025). https://doi.org/10.1007/s10661-025-14461-0
 
