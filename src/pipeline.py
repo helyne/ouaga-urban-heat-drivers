@@ -256,7 +256,7 @@ def _compute_spectral_indices(aoi: ee.Geometry, config: dict) -> ee.Image:
         .filterBounds(aoi) \
         .filter(ee.Filter.calendarRange(3, 5, 'month')) \
         .filter(ee.Filter.calendarRange(config["sentinel_year"], config["sentinel_year"], 'year')) \
-        .filter(ee.Filter.lt('CLOUDY_PIXEL_PERCENTAGE', 30)) \
+        .filter(ee.Filter.lt('CLOUDY_PIXEL_PERCENTAGE', config["cloud_threshold"])) \
         .map(process_sentinel)
 
     spectral_indices = sentinel.median()
