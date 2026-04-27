@@ -1,0 +1,4 @@
+\usepackage{float}
+\let\origfigure\figure
+\let\endorigfigure\endfigure
+\renewenvironment{figure}[1][H]{\origfigure[H]}{\endorigfigure}
