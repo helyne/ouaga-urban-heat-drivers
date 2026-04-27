@@ -126,8 +126,8 @@ The processed raster stack and pre-fit ML models are archived on Zenodo:
 
 | Artifact | Path in repo | Zenodo DOI |
 |---|---|---|
-| Processed raster stack | `data/processed/ouaga_aligned_stack.tif` | _DOI pending_ |
-| Pre-fit ML models (XGBoost, RF, SVM) | `models/Hotspotters_Models.zip` | _DOI pending_ |
+| Processed raster stack | `data/processed/ouaga_aligned_stack.tif` | [10.5281/zenodo.19835163](https://doi.org/10.5281/zenodo.19835163) |
+| Pre-fit ML models (XGBoost, RF, SVM) | `models/Hotspotters_Models.zip` | [10.5281/zenodo.19835163](https://doi.org/10.5281/zenodo.19835163) |
 
 Download both, place them at the paths shown above, then run the notebooks. The raster is also fully regenerable from Step 1 (GEE) — see [`data/README.md`](data/README.md) for full data sources and provenance. All input data sources are open-access.
 
