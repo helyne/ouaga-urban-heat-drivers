@@ -32,3 +32,6 @@ models/
 
 # Jupyter auto-save temp files
 *.ipynb.tmp
+
+# Local environment files (never commit secrets)
+*.env
