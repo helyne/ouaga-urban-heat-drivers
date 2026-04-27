@@ -1,0 +1,17 @@
+timestamp: 2026-03-02 01:50:32 CET
+script: R/gccm_permutation_test.R
+git_hash: cc8938d
+r_version: 4.3.1
+spEDM_version: '1.7'
+params:
+  variable: DEM
+  tau: 10
+  E: 9
+  n_perm: 99
+  detrend: yes
+  AGG_FACTOR: 5.0
+  LIB_SIZES: seq(10,120,10)
+  N_PRED: 2000.0
+  SEED: 42.0
+fingerprint: 5|2,3,4,5,6,7,8,9,10,11,12,13,14,15|10,20,30,40,50,60,70,80,90,100,110,120|2000|42|10|DEM|fixedE9
+

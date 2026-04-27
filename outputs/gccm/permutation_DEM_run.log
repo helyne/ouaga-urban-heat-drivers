@@ -1,0 +1,21 @@
+Warning message:
+package ‘spEDM’ was built under R version 4.3.3 
+terra 1.8.54
+Warning message:
+package ‘terra’ was built under R version 4.3.3 
+Warning message:
+package ‘ggplot2’ was built under R version 4.3.3 
+=== GCCM Permutation Null Test ===
+
+Variable: DEM
+tau = 10, E = 3, N_PERM = 99, detrend = TRUE
+Output:   outputs/gccm/permutation/
+
+Loading raster: data/processed/ouaga_aligned_stack.tif 
+  Original: 10 bands, 892 x 991 pixels
+  Aggregated (x5): 179 x 199 pixels
+  Valid pixels: 24904
+  Library: 24904, Prediction: 2000
+
+--- Real data: GCCM ---
+Computing: [====                                    ] 8%  (~3m56s remaining)       Computing: [=======                                 ] 17%  (~5m28s remaining)       Computing: [==========                              ] 25%  (~6m55s remaining)       
