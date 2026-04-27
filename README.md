@@ -53,11 +53,11 @@ R/                   # GCCM causal analysis (R scripts)
   gccm_analysis.R    #   Main GCCM analysis script
   INSTALL.md         #   R dependency installation instructions
 
-notebooks/           # Analysis notebooks
-  01_processing_pipeline #   GEE computation and raster export
-  02_eda                 #   Exploratory data analysis and validation
-  03_causal_analysis     #   GCCM publication figures
-  models                 #   XGBoost, Random Forest, SHAP interpretability
+notebooks/           # Analysis notebooks (run in order)
+  01_processing_pipeline  # GEE → aligned raster stack
+  02_hotspot_detection    # LST map figure
+  03_models               # ML models, SHAP, susceptibility maps
+  04_causal_analysis      # GCCM convergence + asymmetry figures
 
 data/
   raw/               #   Input data (shapefiles, boundary) — treat as read-only
@@ -86,20 +86,27 @@ Run the steps below in order. Each step depends on the outputs of the previous o
    ```
    Requires a GEE account. Outputs: `data/processed/ouaga_aligned_stack.tif`
 
-2. **GCCM causal analysis** — runs the Geographical Convergent Cross-Mapping in R:
+2. **Hotspot detection** — produces the LST map figure:
+   ```bash
+   jupyter notebook notebooks/02_hotspot_detection.ipynb
+   ```
+   Requires a GEE account. Outputs: `figures/pub/lst_hotspot_map.png`
+
+3. **ML models and SHAP** — trains XGBoost/RF/SVM, generates SHAP and susceptibility figures:
+   ```bash
+   jupyter notebook notebooks/03_models.ipynb
+   ```
+   Outputs: `figures/pub/shap_*.png`, `figures/pub/susceptibility_maps.png`
+
+4. **GCCM causal analysis** — runs the Geographical Convergent Cross-Mapping in R:
    ```bash
    Rscript R/gccm_analysis.R --fixed-E=3 --tau=1
    ```
    Requires R packages (see [`R/INSTALL.md`](R/INSTALL.md)). Outputs: `outputs/gccm/main_E3_tau1/`
 
-3. **ML models and SHAP** — trains XGBoost/RF/SVM, generates SHAP and susceptibility figures:
+5. **GCCM figures** — generates convergence and directional asymmetry plots:
    ```bash
-   jupyter notebook notebooks/models.ipynb
-   ```
-
-4. **GCCM figures** — generates convergence and directional asymmetry plots:
-   ```bash
-   jupyter notebook notebooks/03_causal_analysis.ipynb
+   jupyter notebook notebooks/04_causal_analysis.ipynb
    ```
    Outputs: `figures/pub/gccm_convergence_tau1.png`, `figures/pub/gccm_asymmetry_tau1.png`
 
