@@ -13,7 +13,7 @@
 
 - Python 3.11+
 - R >= 4.3 (for GCCM causal analysis only — see [`R/INSTALL.md`](R/INSTALL.md))
-- A [Google Earth Engine](https://earthengine.google.com/) account (free for research use). See the [GEE access guide](https://developers.google.com/earth-engine/guides/access) and `notebooks/GEE_setup.ipynb` for setup instructions.
+- A [Google Earth Engine](https://earthengine.google.com/) account (free for research use). See the [GEE access guide](https://developers.google.com/earth-engine/guides/access) and [`notebooks/reference/GEE_setup.ipynb`](notebooks/reference/GEE_setup.ipynb) for setup instructions.
 
 ### Setup
 
@@ -34,7 +34,7 @@
    ```bash
    earthengine authenticate
    ```
-   Then initialize with your GEE cloud project ID. See `notebooks/GEE_setup.ipynb` for a detailed walkthrough if this is your first time using GEE.
+   Then initialize with your GEE cloud project ID. See [`notebooks/reference/GEE_setup.ipynb`](notebooks/reference/GEE_setup.ipynb) for a detailed walkthrough if this is your first time using GEE.
 
 4. Set up the data. See [`data/README.md`](data/README.md) for full details on data sources, GEE asset setup, and how to regenerate the processed raster stack.
 

@@ -15,7 +15,6 @@ notebooks/Distance_measures/            export-ignore
 notebooks/Heatwave/                     export-ignore
 notebooks/Hotspots/                     export-ignore
 notebooks/NDVI_NDBI_BSI/                export-ignore
-notebooks/reference/                    export-ignore
 
 # Documentation and presentations — not needed for reproduction
 CONTRIBUTING.md                         export-ignore
