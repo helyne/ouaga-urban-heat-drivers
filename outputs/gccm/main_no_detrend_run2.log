@@ -1,0 +1,54 @@
+Warning message:
+package ‘spEDM’ was built under R version 4.3.3 
+terra 1.8.54
+Warning message:
+package ‘terra’ was built under R version 4.3.3 
+Warning message:
+package ‘ggplot2’ was built under R version 4.3.3 
+Loading required package: fastmatrix
+Warning messages:
+1: package ‘SpatialPack’ was built under R version 4.3.3 
+2: package ‘fastmatrix’ was built under R version 4.3.3 
+=== GCCM Analysis ===
+
+Run label: agg5_tau10_E2-15_8pred
+Output:    outputs/gccm/main_no_detrend
+tau = 10 (spatial lag ~ 1500m at 5x aggregation)
+detrend = FALSE
+Loading raster: data/processed/ouaga_aligned_stack.tif 
+  Original: 10 bands, 892 x 991 pixels (30m)
+  Aggregated (x5): 179 x 199 pixels (150m)
+  Valid pixels: 24904 / 35621 (69.9%)
+  Library: 24904 pixels, Prediction: 2000 pixels
+
+=== Step 1: Simplex E-selection ===
+
+  Loading from checkpoint...
+  simplex(built_density): E = 12 (cached)
+  simplex(green_density): E = 11 (cached)
+  simplex(distance_to_water): E = 7 (cached)
+  simplex(distance_to_roads): E = 10 (cached)
+  simplex(DEM): E = 8 (cached)
+  simplex(NDBI): E = 10 (cached)
+  simplex(BSI): E = 11 (cached)
+  simplex(NDVI): E = 10 (cached)
+  simplex(LST): E = 9 (cached)
+
+Saved: outputs/gccm/main_no_detrend/simplex_selection.csv
+Saved: outputs/gccm/main_no_detrend/simplex_full.csv
+
+=== Step 2: GCCM analysis ===
+
+  Loaded 7 cached predictor(s): built_density, green_density, distance_to_water, distance_to_roads, DEM, NDBI, BSI
+
+--- built_density <-> LST --- (cached, rho = 0.573 / 0.675)
+--- green_density <-> LST --- (cached, rho = 0.504 / 0.536)
+--- distance_to_water <-> LST --- (cached, rho = 0.583 / 0.667)
+--- distance_to_roads <-> LST --- (cached, rho = 0.546 / 0.577)
+--- DEM <-> LST --- (cached, rho = 0.609 / 0.618)
+--- NDBI <-> LST --- (cached, rho = 0.673 / 0.671)
+--- BSI <-> LST --- (cached, rho = 0.641 / 0.655)
+--- NDVI <-> LST ---
+  E = c(10, 9)
+Computing: [====                                    ] 8%  (~7m44s remaining)       Computing: [=======                                 ] 17%  (~8m23s remaining)       Computing: [==========                              ] 25%  (~10m3s remaining)       Computing: [==============                          ] 33%  (~11m12s remaining)       Computing: [=================                       ] 42%  (~11m54s remaining)       Computing: [====================                    ] 50%  (~11m59s remaining)       Computing: [========================                ] 58%  (~11m26s remaining)       Computing: [===========================             ] 67%  (~10m14s remaining)       Computing: [==============================          ] 75%  (~8m19s remaining)       Computing: [==================================      ] 83%  (~6m2s remaining)       Computing: [=====================================   ] 92%  (~3m9s remaining)       Computing: [========================================] 100% (done)                         
+Computing: [====                                    ] 8%  (~3m52s remaining)       Computing: [=======                                 ] 17%  (~5m50s remaining)       Computing: [==========                              ] 25%  (~7m50s remaining)       Computing: [==============                          ] 33%  (~9m35s remaining)       Computing: [=================                       ] 42%  (~10m46s remaining)       Computing: [====================                    ] 50%  (~11m14s remaining)       Computing: [========================                ] 58%  (~10m47s remaining)       Computing: [===========================             ] 67%  (~9m38s remaining)       Computing: [==============================          ] 75%  (~7m51s remaining)       Computing: [==================================      ] 83%  (~5m44s remaining)       
