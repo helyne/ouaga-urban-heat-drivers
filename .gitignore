@@ -26,3 +26,9 @@ presentations/
 # Large binary files
 *.mov
 *.nc
+
+# Pickled models — too large for git, archived on Zenodo
+models/
+
+# Jupyter auto-save temp files
+*.ipynb.tmp
