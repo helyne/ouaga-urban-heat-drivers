@@ -7,12 +7,10 @@
 
 # Legacy/exploratory notebooks — not needed for reproduction
 notebooks/00_quick_start.ipynb          export-ignore
-notebooks/02_eda.ipynb                  export-ignore
 notebooks/download_individual_bands.ipynb  export-ignore
 notebooks/models.ipynb                  export-ignore
 notebooks/DEM/                          export-ignore
 notebooks/Distance_measures/            export-ignore
-notebooks/Heatwave/                     export-ignore
 notebooks/Hotspots/                     export-ignore
 notebooks/NDVI_NDBI_BSI/                export-ignore
 notebooks/reference/ouagadougou-shp-tutorial.ipynb  export-ignore
