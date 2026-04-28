@@ -28,3 +28,18 @@ figures/*.html                          export-ignore
 # Duplicate/unnecessary data files
 "data/raw/Shapefile Ouaga/Ouaga.zip"              export-ignore
 "data/raw/Shapefile Ouaga/ougadougou_shapefile.ipynb"  export-ignore
+
+# GCCM exploratory / sensitivity runs — paper cites only main_E3_tau1
+outputs/gccm/archived/                  export-ignore
+outputs/gccm/main/                      export-ignore
+outputs/gccm/main_E3_tau5/              export-ignore
+outputs/gccm/main_fixed_E3/             export-ignore
+outputs/gccm/main_no_detrend/           export-ignore
+outputs/gccm/multiscale/                export-ignore
+outputs/gccm/permutation/               export-ignore
+outputs/gccm/sensitivity/               export-ignore
+outputs/gccm/suggested_tau.csv          export-ignore
+outputs/gccm/*.log                      export-ignore
+
+# Duplicate figure variant
+figures/ouagadougou-heatwaves-example-days-long.svg  export-ignore
