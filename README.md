@@ -126,10 +126,19 @@ The processed raster stack and pre-fit ML models are archived on Zenodo:
 
 | Artifact | Path in repo | Zenodo DOI |
 |---|---|---|
-| Processed raster stack | `data/processed/ouaga_aligned_stack.tif` | [10.5281/zenodo.19835163](https://doi.org/10.5281/zenodo.19835163) |
-| Pre-fit ML models (XGBoost, RF, SVM) | `models/Hotspotters_Models.zip` | [10.5281/zenodo.19835163](https://doi.org/10.5281/zenodo.19835163) |
+| Processed raster stack | `data/processed/ouaga_aligned_stack.tif` | [10.5281/zenodo.19835805](https://doi.org/10.5281/zenodo.19835805) |
+| Pre-fit ML models (XGBoost, RF, SVM) | `models/Hotspotters_Models.zip` | [10.5281/zenodo.19835805](https://doi.org/10.5281/zenodo.19835805) |
 
-Download both, place them at the paths shown above, then run the notebooks. The raster is also fully regenerable from Step 1 (GEE) — see [`data/README.md`](data/README.md) for full data sources and provenance. All input data sources are open-access.
+Download both files. Place the raster at the path shown above; unzip the models bundle in place:
+
+```bash
+cd models
+unzip Hotspotters_Models.zip
+```
+
+This produces `models/xgb_model.pkl`, `models/rf_model.pkl`, and `models/svm_model.pkl` — the paths the notebooks load from when `MODEL_MODE = "load"`.
+
+The raster is also fully regenerable from Step 1 (GEE) — see [`data/README.md`](data/README.md) for full data sources and provenance. All input data sources are open-access.
 
 **Code archive:** This codebase is archived on Zenodo at _DOI pending_. Cite this DOI when referencing the analysis code.
 
