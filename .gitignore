@@ -3,7 +3,8 @@
 **/.DS_Store
 
 # Data, figures, and reference materials
-figures/
+figures/*
+!figures/*.svg
 data/
 !data/README.md
 !data/raw/
