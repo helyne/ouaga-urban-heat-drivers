@@ -8,6 +8,8 @@ rasterio==1.4.4
 numpy==2.4.1
 pandas==2.3.3
 scipy==1.17.0
+xarray==2026.4.0
+netCDF4==1.7.4
 
 # Machine learning & interpretability
 scikit-learn==1.8.0
