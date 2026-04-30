@@ -57,6 +57,7 @@ After uploading, update these fields in `config/processing.yaml`:
 
 ### Shapefile Ouaga/ (tracked in git)
 - **What:** Ouagadougou city boundary polygon
+- **Source:** Derived from [OCHA-HDX Burkina Faso admin boundaries](https://data.humdata.org/dataset/cod-ab-bfa) by filtering `adm3_name` for Ouagadougou.
 - **Used by:** Nearly all notebooks (defines the Area of Interest)
 - **Included in repo:** Yes — small enough to track directly
 
@@ -74,7 +75,7 @@ After uploading, update these fields in `config/processing.yaml`:
 - **What:** Burkina Faso administrative boundaries (national, regional, commune levels)
 - **Source:** [OCHA HDX - Burkina Faso Admin Boundaries](https://data.humdata.org/dataset/cod-ab-bfa)
 - **License:** Check dataset page for current license (typically CC-BY)
-- **Used by:** `notebooks/reference/ouagadougou-shp-tutorial.ipynb` (exploratory only, not needed for the main pipeline)
+- **Used by:** Exploratory dataset, not used in the main pipeline (the filtered AOI is in `data/raw/Shapefile Ouaga/`).
 - **Setup:** Download and extract into `data/raw/OCHA-HDX/`
 
 ### dem_ouaga/
@@ -88,7 +89,7 @@ After uploading, update these fields in `config/processing.yaml`:
 - **What:** Global Human Settlement Model (urban/rural classification grid)
 - **Source:** [Copernicus GHS-SMOD](https://human-settlement.emergency.copernicus.eu/download.php?ds=smod)
 - **License:** Copernicus open data policy — free to use with attribution
-- **Used by:** `notebooks/reference/ouagadougou-shp-tutorial.ipynb` (exploratory only)
+- **Used by:** Exploratory dataset, not used in the main pipeline.
 - **Setup:** Download tiles R8_C18 and R8_C19 for the 2025 epoch (R2023A release) and extract into `data/raw/GHS-SMOD-Copernicus/`
 
 ### ndvi_ndbi_bsi/
