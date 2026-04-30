@@ -58,6 +58,7 @@ You can use prefixes to categorise work:
 * `fix` for bug fixes or small corrections to previous work
 * `docs` for documentation changes only
 * `refactor` for cleaning up code or code restructuring with no functional change
+* `test` for adding or updating tests
 
 ### 4. Push and open a Pull Request (PR)
 
@@ -97,17 +98,17 @@ These aren’t hard rules, but more like general good practice:
 
 * **Data**
 
-  * Don’t commit large raw datasets. Store them elsewhere (e.g. LEAP Google bucket) and/or document how to get them.
+  * Don’t commit large raw datasets. Store them elsewhere (e.g. Zenodo for archived data, Google Drive, or your team's shared storage) and document how to get them.
 
 * **Reproducibility**
 
-  * It's good practice to keep required libraries and environment files up-to-date (`requirements.txt`, `environment.yml`, etc.).
+  * It's good practice to keep required libraries and environment files up-to-date (`requirements.txt`, `pyproject.toml`, `renv.lock`).
   * Prefer scripts/modules plus a few well-annotated notebooks, not lots of one-off notebooks, unless it's work in progress.
   * Set random seeds in code to ensure consistent results (`np.random.default_rng(42)`)
 
 * **Structure**
 
-  * Keep code in `src/`, notebooks in `notebooks/`, documentation in `documentation`, and maybe configs in `config/`.
+  * Keep Python code in `src/`, R code in `R/`, notebooks in `notebooks/`, documentation in `docs/`, tests in `tests/`, and configs in `config/`.
 
 
 ## Core terms (mini dictionary)
