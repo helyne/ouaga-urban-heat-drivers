@@ -54,7 +54,7 @@ have very different spatial contexts:
 These three pixels have the same value, but their neighborhoods tell
 completely different stories.
 
-![Spatial context diagram](../figures/gccm_explainer_spatial_context.png)
+![Spatial context diagram](../../figures/gccm_explainer_spatial_context.png)
 
 GCCM's key idea: **describe each pixel not just by its own value, but
 by the pattern of values around it.**
@@ -70,9 +70,9 @@ control the rings:
 E and tau control how much spatial context is used to describe each
 pixel. They are the two most important choices in the analysis.
 
-![E comparison](../figures/gccm_explainer_e_comparison.png){ width=80% }
+![E comparison](../../figures/gccm_explainer_e_comparison.png){ width=80% }
 
-![Tau comparison](../figures/gccm_explainer_tau_comparison.png){ width=80% }
+![Tau comparison](../../figures/gccm_explainer_tau_comparison.png){ width=80% }
 
 For example, with E=3, each pixel gets described by 3 numbers, but
 the spatial context changes if you change the distance between each
@@ -80,7 +80,7 @@ ring (tau). With a smaller tau, the pixel is described by its local
 surroundings, but with larger tau, it is described in the context of
 a larger area.
 
-![Scale comparison](../figures/gccm_scale_comparison.png){ width=70% }
+![Scale comparison](../../figures/gccm_scale_comparison.png){ width=70% }
 
 ---
 
@@ -89,7 +89,7 @@ a larger area.
 
 Take one pixel of LST. Look at the mean temperature in each of its 3 rings:
 
-![GCCM ring diagram](../figures/gccm_explainer_rings_intro.png)
+![GCCM ring diagram](../../figures/gccm_explainer_rings_intro.png)
 
 The **state vector** for this pixel is **(39.6, 39.2, 38.8)** - three
 numbers that summarize its spatial neighborhood. 
@@ -113,7 +113,7 @@ Make a state vector for every pixel in the raster. Each pixel becomes
 a point in 3D space (because E=3 gives 3 coordinates). The collection
 of all these points is the **manifold**, a cloud of dots.
 
-![Manifold example](../figures/gccm_explainer_manifold_v2.png){ width=80% }
+![Manifold example](../../figures/gccm_explainer_manifold_v2.png){ width=80% }
 
 **Pixels from similar neighborhoods end up close together in the
 cloud.** Two pixels from the hot city center will have similar ring means, so
@@ -194,7 +194,7 @@ spatial interpolation.
 **The GCCM test asks something more interesting:** Can we use the 
 LST cloud to predict **NDVI** values?
 
-![Cross-mapping diagram](../figures/gccm_explainer_crossmap.png)
+![Cross-mapping diagram](../../figures/gccm_explainer_crossmap.png)
 
 ### How cross-mapping works
 
@@ -248,7 +248,7 @@ correlated variables always share information). The question is:
 | Negative | LST drives the predictor (or unclear) |
 | Near zero | Can't distinguish direction |
 
-![Asymmetry example](../figures/gccm_explainer_asymmetry.png)
+![Asymmetry example](../../figures/gccm_explainer_asymmetry.png)
 
 
 ---
@@ -280,7 +280,7 @@ correlation, more data doesn't help - rho stays flat.
 | Rho rises with library size | **Convergence** (supports a causal link) |
 | Rho stays flat | No causal link (just shared structure) |
 
-![Convergence example](../figures/gccm_explainer_convergence.png)
+![Convergence example](../../figures/gccm_explainer_convergence.png)
 
 Convergence confirms variables are **causally coupled**. The asymmetry
 test distinguishes *which direction* the causal influence flows.

@@ -5,6 +5,16 @@
 # Data, figures, and reference materials
 figures/*
 !figures/*.svg
+# Explainer figures referenced by docs/methods/gccm_explainer.md
+!figures/gccm_explainer_asymmetry.png
+!figures/gccm_explainer_convergence.png
+!figures/gccm_explainer_crossmap.png
+!figures/gccm_explainer_e_comparison.png
+!figures/gccm_explainer_manifold_v2.png
+!figures/gccm_explainer_rings_intro.png
+!figures/gccm_explainer_spatial_context.png
+!figures/gccm_explainer_tau_comparison.png
+!figures/gccm_scale_comparison.png
 data/
 !data/README.md
 !data/raw/
