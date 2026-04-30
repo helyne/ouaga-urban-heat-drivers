@@ -1,191 +1,0 @@
-=== Waiting for tau=15 to finish ===
-  13:05 — still waiting for outputs/gccm/sensitivity/tau/tau15/summary.csv ...
-  13:06 — still waiting for outputs/gccm/sensitivity/tau/tau15/summary.csv ...
-  13:07 — still waiting for outputs/gccm/sensitivity/tau/tau15/summary.csv ...
-  13:08 — still waiting for outputs/gccm/sensitivity/tau/tau15/summary.csv ...
-  13:09 — still waiting for outputs/gccm/sensitivity/tau/tau15/summary.csv ...
-  13:10 — still waiting for outputs/gccm/sensitivity/tau/tau15/summary.csv ...
-  13:11 — still waiting for outputs/gccm/sensitivity/tau/tau15/summary.csv ...
-  13:12 — still waiting for outputs/gccm/sensitivity/tau/tau15/summary.csv ...
-  13:13 — still waiting for outputs/gccm/sensitivity/tau/tau15/summary.csv ...
-  13:14 — still waiting for outputs/gccm/sensitivity/tau/tau15/summary.csv ...
-  13:15 — still waiting for outputs/gccm/sensitivity/tau/tau15/summary.csv ...
-  13:16 — still waiting for outputs/gccm/sensitivity/tau/tau15/summary.csv ...
-  13:17 — still waiting for outputs/gccm/sensitivity/tau/tau15/summary.csv ...
-  13:18 — still waiting for outputs/gccm/sensitivity/tau/tau15/summary.csv ...
-  13:19 — still waiting for outputs/gccm/sensitivity/tau/tau15/summary.csv ...
-  13:20 — still waiting for outputs/gccm/sensitivity/tau/tau15/summary.csv ...
-  13:21 — still waiting for outputs/gccm/sensitivity/tau/tau15/summary.csv ...
-  13:22 — still waiting for outputs/gccm/sensitivity/tau/tau15/summary.csv ...
-  13:23 — still waiting for outputs/gccm/sensitivity/tau/tau15/summary.csv ...
-  13:24 — still waiting for outputs/gccm/sensitivity/tau/tau15/summary.csv ...
-  tau=15 complete at 13:24
-
-=== Step 1: Compare tau=10 vs tau=15 ===
-
---- tau=10 summary ---
-"predictor","group","n_eff","rho_pred_to_LST","rho_LST_to_pred","p_fwd","p_rev","ci_fwd_lower","ci_fwd_upper","ci_rev_lower","ci_rev_upper","kendall_fwd","kendall_fwd_p","kendall_rev","kendall_rev_p","direction"
-"DEM","causal",83.1303711891032,0.720333529623482,0.615936480169607,1.55431223447522e-14,5.55016255177065e-10,0.597587136638638,0.810089790093342,0.461707073159785,0.73401769511213,1,4.17535139796144e-09,1,4.17535139796144e-09,"both significant"
-"BSI","associative",139.42303012463,0.644877696732347,0.677806483749993,0,0,0.53610590216642,0.732585122484174,0.576523950208837,0.758574887231976,1,4.17535139796144e-09,1,4.17535139796144e-09,"both significant"
-"built_density","causal",76.6729927387354,0.638620441538791,0.693890188257112,4.51403359136293e-10,2.93054469580056e-12,0.483463393853593,0.754872653053055,0.556033662682992,0.794591441824029,1,4.17535139796144e-09,1,4.17535139796144e-09,"both significant"
-
---- tau=15 summary ---
-"predictor","group","n_eff","rho_pred_to_LST","rho_LST_to_pred","p_fwd","p_rev","ci_fwd_lower","ci_fwd_upper","ci_rev_lower","ci_rev_upper","kendall_fwd","kendall_fwd_p","kendall_rev","kendall_rev_p","direction"
-"DEM","causal",83.1303711891032,0.671620419903912,0.596811807267273,3.5162983635928e-12,2.53256349225239e-09,0.533293934259295,0.77496562211261,0.437575449509193,0.71975321010686,1,4.17535139796144e-09,1,4.17535139796144e-09,"both significant"
-"BSI","associative",139.42303012463,0.607468103262963,0.645081338501542,1.99840144432528e-15,0,0.490785203486365,0.702745185457816,0.536354336591149,0.732746640945156,1,4.17535139796144e-09,1,4.17535139796144e-09,"both significant"
-"built_density","causal",76.6729927387354,0.629197151694296,0.672319645817816,9.64986757168163e-10,2.37838637673349e-11,0.471299641814092,0.748014579481285,0.527458805206249,0.779191968488869,1,4.17535139796144e-09,1,4.17535139796144e-09,"both significant"
-
---- DEM negative control comparison ---
-tau=10:
-  pred->LST = 0.720333529623482, LST->pred = 0.615936480169607, direction = "both significant"
-tau=15:
-  pred->LST = 0.671620419903912, LST->pred = 0.596811807267273, direction = "both significant"
-
-=== Step 2: Starting full 8-predictor run at tau=10 ===
-Output directory: outputs/gccm/main/
-This will NOT overwrite sensitivity results.
-
-Warning message:
-package ‘spEDM’ was built under R version 4.3.3 
-terra 1.8.54
-Warning message:
-package ‘terra’ was built under R version 4.3.3 
-Warning message:
-package ‘ggplot2’ was built under R version 4.3.3 
-Loading required package: fastmatrix
-Warning messages:
-1: package ‘SpatialPack’ was built under R version 4.3.3 
-2: package ‘fastmatrix’ was built under R version 4.3.3 
-=== GCCM Analysis ===
-
-Run label: agg5_tau10_E2-15_8pred
-Output:    outputs/gccm/main
-tau = 10 (spatial lag ~ 1500m at 5x aggregation)
-Loading raster: data/processed/ouaga_aligned_stack.tif 
-  Original: 10 bands, 892 x 991 pixels (30m)
-  Aggregated (x5): 179 x 199 pixels (150m)
-  Valid pixels: 24904 / 35621 (69.9%)
-  Library: 24904 pixels, Prediction: 2000 pixels
-
-=== Step 1: Simplex E-selection ===
-
-  simplex(built_density): E = 12 (rho = 0.907)
-  simplex(green_density): E = 10 (rho = 0.803)
-  simplex(distance_to_water): E = 9 (rho = 1.000)
-  simplex(distance_to_roads): E = 12 (rho = 0.728)
-  simplex(DEM): E = 9 (rho = 0.996)
-  simplex(NDBI): E = 10 (rho = 0.900)
-  simplex(BSI): E = 11 (rho = 0.873)
-  simplex(NDVI): E = 10 (rho = 0.753)
-  simplex(LST): E = 9 (rho = 0.918)
-  Checkpointed simplex results.
-
-Saved: outputs/gccm/main/simplex_selection.csv
-Saved: outputs/gccm/main/simplex_full.csv
-
-=== Step 2: GCCM analysis ===
-
---- built_density <-> LST ---
-  E = c(12, 9)
-Computing: [====                                    ] 8%  (~4m32s remaining)       Computing: [=======                                 ] 17%  (~7m0s remaining)       Computing: [==========                              ] 25%  (~9m26s remaining)       Computing: [==============                          ] 33%  (~11m26s remaining)       Computing: [=================                       ] 42%  (~12m44s remaining)       Computing: [====================                    ] 50%  (~13m9s remaining)       Computing: [========================                ] 58%  (~12m54s remaining)       Computing: [===========================             ] 67%  (~11m42s remaining)       Computing: [==============================          ] 75%  (~9m32s remaining)       Computing: [==================================      ] 83%  (~6m50s remaining)       Computing: [=====================================   ] 92%  (~3m37s remaining)       Computing: [========================================] 100% (done)                         
-Computing: [====                                    ] 8%  (~3m50s remaining)       Computing: [=======                                 ] 17%  (~5m46s remaining)       Computing: [==========                              ] 25%  (~7m40s remaining)       Computing: [==============                          ] 33%  (~9m14s remaining)       Computing: [=================                       ] 42%  (~10m17s remaining)       Computing: [====================                    ] 50%  (~10m36s remaining)       Computing: [========================                ] 58%  (~10m32s remaining)       Computing: [===========================             ] 67%  (~9m24s remaining)       Computing: [==============================          ] 75%  (~7m39s remaining)       Computing: [==================================      ] 83%  (~5m28s remaining)       Computing: [=====================================   ] 92%  (~2m53s remaining)       Computing: [========================================] 100% (done)                         
-  built_density -> LST: rho = 0.639 (final)
-  LST -> built_density: rho = 0.694 (final)
-
-  Checkpointed: outputs/gccm/main/checkpoints/gccm_built_density.rds
---- green_density <-> LST ---
-  E = c(10, 9)
-Computing: [====                                    ] 8%  (~4m7s remaining)       Computing: [=======                                 ] 17%  (~6m16s remaining)       Computing: [==========                              ] 25%  (~8m15s remaining)       Computing: [==============                          ] 33%  (~9m55s remaining)       Computing: [=================                       ] 42%  (~11m0s remaining)       Computing: [====================                    ] 50%  (~11m24s remaining)       Computing: [========================                ] 58%  (~11m8s remaining)       Computing: [===========================             ] 67%  (~10m3s remaining)       Computing: [==============================          ] 75%  (~8m12s remaining)       Computing: [==================================      ] 83%  (~5m51s remaining)       Computing: [=====================================   ] 92%  (~3m4s remaining)       Computing: [========================================] 100% (done)                         
-Computing: [====                                    ] 8%  (~3m51s remaining)       Computing: [=======                                 ] 17%  (~5m49s remaining)       Computing: [==========                              ] 25%  (~7m42s remaining)       Computing: [==============                          ] 33%  (~9m18s remaining)       Computing: [=================                       ] 42%  (~10m19s remaining)       Computing: [====================                    ] 50%  (~10m37s remaining)       Computing: [========================                ] 58%  (~10m17s remaining)       Computing: [===========================             ] 67%  (~9m11s remaining)       Computing: [==============================          ] 75%  (~7m29s remaining)       Computing: [==================================      ] 83%  (~5m24s remaining)       Computing: [=====================================   ] 92%  (~2m51s remaining)       Computing: [========================================] 100% (done)                         
-  green_density -> LST: rho = 0.503 (final)
-  LST -> green_density: rho = 0.584 (final)
-
-  Checkpointed: outputs/gccm/main/checkpoints/gccm_green_density.rds
---- distance_to_water <-> LST ---
-  E = c(9, 9)
-Computing: [====                                    ] 8%  (~3m36s remaining)       Computing: [=======                                 ] 17%  (~5m33s remaining)       Computing: [==========                              ] 25%  (~7m29s remaining)       Computing: [==============                          ] 33%  (~9m6s remaining)       Computing: [=================                       ] 42%  (~10m10s remaining)       Computing: [====================                    ] 50%  (~10m31s remaining)       Computing: [========================                ] 58%  (~10m15s remaining)       Computing: [===========================             ] 67%  (~9m14s remaining)       Computing: [==============================          ] 75%  (~7m35s remaining)       Computing: [==================================      ] 83%  (~5m24s remaining)       Computing: [=====================================   ] 92%  (~2m48s remaining)       Computing: [========================================] 100% (done)                         
-Computing: [====                                    ] 8%  (~3m53s remaining)       Computing: [=======                                 ] 17%  (~5m48s remaining)       Computing: [==========                              ] 25%  (~7m43s remaining)       Computing: [==============                          ] 33%  (~9m18s remaining)       Computing: [=================                       ] 42%  (~10m19s remaining)       Computing: [====================                    ] 50%  (~10m38s remaining)       Computing: [========================                ] 58%  (~10m27s remaining)       Computing: [===========================             ] 67%  (~9m28s remaining)       Computing: [==============================          ] 75%  (~7m42s remaining)       Computing: [==================================      ] 83%  (~5m26s remaining)       Computing: [=====================================   ] 92%  (~2m50s remaining)       Computing: [========================================] 100% (done)                         
-  distance_to_water -> LST: rho = 0.710 (final)
-  LST -> distance_to_water: rho = 0.663 (final)
-
-  Checkpointed: outputs/gccm/main/checkpoints/gccm_distance_to_water.rds
---- distance_to_roads <-> LST ---
-  E = c(12, 9)
-Computing: [====                                    ] 8%  (~4m32s remaining)       Computing: [=======                                 ] 17%  (~6m56s remaining)       Computing: [==========                              ] 25%  (~9m17s remaining)       Computing: [==============                          ] 33%  (~11m12s remaining)       Computing: [=================                       ] 42%  (~12m29s remaining)       Computing: [====================                    ] 50%  (~12m54s remaining)       Computing: [========================                ] 58%  (~12m33s remaining)       Computing: [===========================             ] 67%  (~11m19s remaining)       Computing: [==============================          ] 75%  (~9m16s remaining)       Computing: [==================================      ] 83%  (~6m44s remaining)       Computing: [=====================================   ] 92%  (~3m34s remaining)       Computing: [========================================] 100% (done)                         
-Computing: [====                                    ] 8%  (~3m49s remaining)       Computing: [=======                                 ] 17%  (~5m47s remaining)       Computing: [==========                              ] 25%  (~7m42s remaining)       Computing: [==============                          ] 33%  (~9m18s remaining)       Computing: [=================                       ] 42%  (~10m21s remaining)       Computing: [====================                    ] 50%  (~10m39s remaining)       Computing: [========================                ] 58%  (~10m25s remaining)       Computing: [===========================             ] 67%  (~9m24s remaining)       Computing: [==============================          ] 75%  (~7m41s remaining)       Computing: [==================================      ] 83%  (~5m27s remaining)       Computing: [=====================================   ] 92%  (~2m50s remaining)       Computing: [========================================] 100% (done)                         
-  distance_to_roads -> LST: rho = 0.550 (final)
-  LST -> distance_to_roads: rho = 0.584 (final)
-
-  Checkpointed: outputs/gccm/main/checkpoints/gccm_distance_to_roads.rds
---- DEM <-> LST ---
-  E = c(9, 9)
-Computing: [====                                    ] 8%  (~3m52s remaining)       Computing: [=======                                 ] 17%  (~5m59s remaining)       Computing: [==========                              ] 25%  (~7m59s remaining)       Computing: [==============                          ] 33%  (~9m38s remaining)       Computing: [=================                       ] 42%  (~10m41s remaining)       Computing: [====================                    ] 50%  (~11m10s remaining)       Computing: [========================                ] 58%  (~11m3s remaining)       Computing: [===========================             ] 67%  (~9m47s remaining)       Computing: [==============================          ] 75%  (~7m55s remaining)       Computing: [==================================      ] 83%  (~5m37s remaining)       Computing: [=====================================   ] 92%  (~2m56s remaining)       Computing: [========================================] 100% (done)                         
-Computing: [====                                    ] 8%  (~3m59s remaining)       Computing: [=======                                 ] 17%  (~6m0s remaining)       Computing: [==========                              ] 25%  (~7m50s remaining)       Computing: [==============                          ] 33%  (~9m24s remaining)       Computing: [=================                       ] 42%  (~10m25s remaining)       Computing: [====================                    ] 50%  (~10m43s remaining)       Computing: [========================                ] 58%  (~10m18s remaining)       Computing: [===========================             ] 67%  (~9m12s remaining)       Computing: [==============================          ] 75%  (~7m30s remaining)       Computing: [==================================      ] 83%  (~5m20s remaining)       Computing: [=====================================   ] 92%  (~2m48s remaining)       Computing: [========================================] 100% (done)                         
-  DEM -> LST: rho = 0.720 (final)
-  LST -> DEM: rho = 0.616 (final)
-
-  Checkpointed: outputs/gccm/main/checkpoints/gccm_DEM.rds
---- NDBI <-> LST ---
-  E = c(10, 9)
-Computing: [====                                    ] 8%  (~4m7s remaining)       Computing: [=======                                 ] 17%  (~6m17s remaining)       Computing: [==========                              ] 25%  (~8m23s remaining)       Computing: [==============                          ] 33%  (~10m8s remaining)       Computing: [=================                       ] 42%  (~11m17s remaining)       Computing: [====================                    ] 50%  (~11m38s remaining)       Computing: [========================                ] 58%  (~11m22s remaining)       Computing: [===========================             ] 67%  (~10m13s remaining)       Computing: [==============================          ] 75%  (~8m18s remaining)       Computing: [==================================      ] 83%  (~5m52s remaining)       Computing: [=====================================   ] 92%  (~3m4s remaining)       Computing: [========================================] 100% (done)                         
-Computing: [====                                    ] 8%  (~3m50s remaining)       Computing: [=======                                 ] 17%  (~5m46s remaining)       Computing: [==========                              ] 25%  (~7m40s remaining)       Computing: [==============                          ] 33%  (~9m15s remaining)       Computing: [=================                       ] 42%  (~10m17s remaining)       Computing: [====================                    ] 50%  (~10m36s remaining)       Computing: [========================                ] 58%  (~10m14s remaining)       Computing: [===========================             ] 67%  (~9m9s remaining)       Computing: [==============================          ] 75%  (~7m27s remaining)       Computing: [==================================      ] 83%  (~5m20s remaining)       Computing: [=====================================   ] 92%  (~2m46s remaining)       Computing: [========================================] 100% (done)                         
-  NDBI -> LST: rho = 0.684 (final)
-  LST -> NDBI: rho = 0.672 (final)
-
-  Checkpointed: outputs/gccm/main/checkpoints/gccm_NDBI.rds
---- BSI <-> LST ---
-  E = c(11, 9)
-Computing: [====                                    ] 8%  (~4m19s remaining)       Computing: [=======                                 ] 17%  (~6m37s remaining)       Computing: [==========                              ] 25%  (~8m51s remaining)       Computing: [==============                          ] 33%  (~10m41s remaining)       Computing: [=================                       ] 42%  (~11m52s remaining)       Computing: [====================                    ] 50%  (~12m14s remaining)       Computing: [========================                ] 58%  (~11m57s remaining)       Computing: [===========================             ] 67%  (~10m45s remaining)       Computing: [==============================          ] 75%  (~8m47s remaining)       Computing: [==================================      ] 83%  (~6m15s remaining)       Computing: [=====================================   ] 92%  (~3m19s remaining)       Computing: [========================================] 100% (done)                         
-Computing: [====                                    ] 8%  (~3m49s remaining)       Computing: [=======                                 ] 17%  (~5m46s remaining)       Computing: [==========                              ] 25%  (~7m40s remaining)       Computing: [==============                          ] 33%  (~9m14s remaining)       Computing: [=================                       ] 42%  (~10m16s remaining)       Computing: [====================                    ] 50%  (~10m34s remaining)       Computing: [========================                ] 58%  (~10m27s remaining)       Computing: [===========================             ] 67%  (~9m30s remaining)       Computing: [==============================          ] 75%  (~7m46s remaining)       Computing: [==================================      ] 83%  (~5m32s remaining)       Computing: [=====================================   ] 92%  (~2m54s remaining)       Computing: [========================================] 100% (done)                         
-  BSI -> LST: rho = 0.645 (final)
-  LST -> BSI: rho = 0.678 (final)
-
-  Checkpointed: outputs/gccm/main/checkpoints/gccm_BSI.rds
---- NDVI <-> LST ---
-  E = c(10, 9)
-Computing: [====                                    ] 8%  (~4m7s remaining)       Computing: [=======                                 ] 17%  (~6m10s remaining)       Computing: [==========                              ] 25%  (~8m11s remaining)       Computing: [==============                          ] 33%  (~9m51s remaining)       Computing: [=================                       ] 42%  (~10m56s remaining)       Computing: [====================                    ] 50%  (~11m17s remaining)       Computing: [========================                ] 58%  (~10m54s remaining)       Computing: [===========================             ] 67%  (~9m47s remaining)       Computing: [==============================          ] 75%  (~8m1s remaining)       Computing: [==================================      ] 83%  (~5m43s remaining)       Computing: [=====================================   ] 92%  (~2m59s remaining)       Computing: [========================================] 100% (done)                         
-Computing: [====                                    ] 8%  (~3m52s remaining)       Computing: [=======                                 ] 17%  (~5m47s remaining)       Computing: [==========                              ] 25%  (~7m41s remaining)       Computing: [==============                          ] 33%  (~9m15s remaining)       Computing: [=================                       ] 42%  (~10m16s remaining)       Computing: [====================                    ] 50%  (~10m35s remaining)       Computing: [========================                ] 58%  (~10m12s remaining)       Computing: [===========================             ] 67%  (~9m8s remaining)       Computing: [==============================          ] 75%  (~7m27s remaining)       Computing: [==================================      ] 83%  (~5m21s remaining)       Computing: [=====================================   ] 92%  (~2m48s remaining)       Computing: [========================================] 100% (done)                         
-  NDVI -> LST: rho = 0.569 (final)
-  LST -> NDVI: rho = 0.503 (final)
-
-  Checkpointed: outputs/gccm/main/checkpoints/gccm_NDVI.rds
-
-Completed 8 / 8 predictors.
-
-=== Step 2b: Effective N (Clifford/Dutilleul) ===
-
-  built_density: N_eff = 77 (nominal = 2000, ratio = 0.038)
-  green_density: N_eff = 323 (nominal = 2000, ratio = 0.162)
-  distance_to_water: N_eff = 61 (nominal = 2000, ratio = 0.030)
-  distance_to_roads: N_eff = 405 (nominal = 2000, ratio = 0.203)
-  DEM: N_eff = 83 (nominal = 2000, ratio = 0.042)
-  NDBI: N_eff = 81 (nominal = 2000, ratio = 0.041)
-  BSI: N_eff = 139 (nominal = 2000, ratio = 0.070)
-  NDVI: N_eff = 502 (nominal = 2000, ratio = 0.251)
-
-=== Step 3: Build results with CIs ===
-
-Saved: outputs/gccm/main/results.csv
-
-=== Step 4: Convergence plots ===
-
-Saved: outputs/gccm/main/convergence.png
-
-=== GCCM Summary ===
-
-Predictor              N_eff pred>LST    p_fwd [        CI_fwd] LST>pred    p_rev [        CI_rev] K_fwd K_rev Direction
------------------------------------------------------------------------------------------------------------------------- 
-built_density             77   +0.639   0.0000 [+0.483, +0.755]   +0.694   0.0000 [+0.556, +0.795] +1.00 +1.00 both significant
-green_density            323   +0.503   0.0000 [+0.417, +0.580]   +0.584   0.0000 [+0.508, +0.652] +1.00 +1.00 both significant
-distance_to_water         61   +0.710   0.0000 [+0.558, +0.816]   +0.663   0.0000 [+0.493, +0.784] +1.00 +1.00 both significant
-distance_to_roads        405   +0.550   0.0000 [+0.478, +0.615]   +0.584   0.0000 [+0.516, +0.644] +1.00 +1.00 both significant
-DEM                       83   +0.720   0.0000 [+0.598, +0.810]   +0.616   0.0000 [+0.462, +0.734] +1.00 +1.00 both significant
-NDBI                      81   +0.684   0.0000 [+0.548, +0.785]   +0.672   0.0000 [+0.531, +0.776] +1.00 +1.00 both significant
-BSI                      139   +0.645   0.0000 [+0.536, +0.733]   +0.678   0.0000 [+0.577, +0.759] +1.00 +1.00 both significant
-NDVI                     502   +0.569   0.0000 [+0.506, +0.625]   +0.503   0.0000 [+0.434, +0.565] +1.00 +1.00 both significant
-
-Saved: outputs/gccm/main/summary.csv
-
-=== Done ===
-
-=== Full run complete ===

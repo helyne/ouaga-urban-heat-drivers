@@ -10,6 +10,11 @@ data/
 !data/raw/
 data/raw/*
 !data/raw/Shapefile Ouaga/
+
+# outputs/gccm/ — only the canonical publication run is tracked
+outputs/gccm/*
+!outputs/gccm/main_E3_tau1/
+
 literature/
 
 # Work in progress and compiled Python files
