@@ -30,14 +30,6 @@ GCCM_DATA = {
         "results": PROJECT_ROOT / "outputs/gccm/main_E3_tau1/results.csv",
         "summary": PROJECT_ROOT / "outputs/gccm/main_E3_tau1/summary.csv",
     },
-    "E=3, tau=5 (neighbourhood scale)": {
-        "results": PROJECT_ROOT / "outputs/gccm/main_E3_tau5/results.csv",
-        "summary": PROJECT_ROOT / "outputs/gccm/main_E3_tau5/summary.csv",
-    },
-    "E=3, tau=10 (district scale)": {
-        "results": PROJECT_ROOT / "outputs/gccm/main_fixed_E3/results.csv",
-        "summary": PROJECT_ROOT / "outputs/gccm/main_fixed_E3/summary.csv",
-    },
 }
 
 # ---------------------------------------------------------------------------
