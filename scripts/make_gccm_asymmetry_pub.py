@@ -6,7 +6,6 @@ matching SHAP's visual style.
 
 Output
 ------
-    figures/pub/gccm_asymmetry_bars.png    (3-panel: tau=1, tau=5, tau=10)
     figures/pub/gccm_asymmetry_tau1.png    (single panel for composite)
 """
 
@@ -98,33 +97,6 @@ def plot_asymmetry(summary_path, title, ax):
 
     style_ax(ax)
     ax.spines["left"].set_visible(False)
-
-
-# ---------------------------------------------------------------------------
-# 3-panel figure (all scales)
-# ---------------------------------------------------------------------------
-fig, axes = plt.subplots(1, 3, figsize=(30, 10))
-
-for ax, (config_label, paths) in zip(axes, GCCM_DATA.items()):
-    summary_path = paths["summary"]
-    if not summary_path.exists():
-        print(f"Skipping {config_label}: {summary_path} not found")
-        continue
-    plot_asymmetry(summary_path, config_label, ax)
-
-fig.text(
-    0.5, -0.01,
-    "(C) = temporally independent predictor (WorldCover, OSM, DEM).  "
-    "(A) = spectral index (Sentinel-2, same conditions as LST).",
-    ha="center", fontsize=FONT["annotation"], style="italic",
-    color=COLORS["tick_label"],
-)
-
-plt.tight_layout(rect=[0, 0.02, 1, 1.0])
-out_3panel = FIG_DIR / "gccm_asymmetry_bars.png"
-plt.savefig(out_3panel)
-plt.close()
-print(f"Saved: {out_3panel}")
 
 
 # ---------------------------------------------------------------------------
