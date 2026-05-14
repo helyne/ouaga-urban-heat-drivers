@@ -5,6 +5,7 @@
 # Data, figures, and reference materials
 figures/*
 !figures/*.svg
+!figures/pub/
 # Explainer figures referenced by docs/methods/gccm_explainer.md
 !figures/gccm_explainer_asymmetry.png
 !figures/gccm_explainer_convergence.png
@@ -20,6 +21,14 @@ data/
 !data/raw/
 data/raw/*
 !data/raw/Shapefile Ouaga/
+
+# scripts
+scripts/
+!scripts/build_submission_zip.sh
+!scripts/figure_style.py
+!scripts/generate_supplementary_figures.py
+!scripts/make_gccm_asymmetry_pub.py
+!scripts/make_gccm_convergence_pub.py
 
 # outputs/gccm/ — only the canonical publication run is tracked
 outputs/gccm/*
