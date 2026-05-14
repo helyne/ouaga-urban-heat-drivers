@@ -6,6 +6,7 @@
 figures/*
 !figures/*.svg
 !figures/pub/
+!figures/pub/**
 # Explainer figures referenced by docs/methods/gccm_explainer.md
 !figures/gccm_explainer_asymmetry.png
 !figures/gccm_explainer_convergence.png
