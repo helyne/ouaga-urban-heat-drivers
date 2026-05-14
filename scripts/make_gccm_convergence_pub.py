@@ -7,8 +7,6 @@ plots in matplotlib matching SHAP's visual style exactly.
 Output
 ------
     figures/pub/gccm_convergence_tau1.png
-    figures/pub/gccm_convergence_tau5.png
-    figures/pub/gccm_convergence_tau10.png
 """
 
 import sys
@@ -131,8 +129,6 @@ def plot_convergence(results_path, title, output_path):
 
 FILENAME_MAP = {
     "E=3, tau=1 (block scale)": "gccm_convergence_tau1.png",
-    "E=3, tau=5 (neighbourhood scale)": "gccm_convergence_tau5.png",
-    "E=3, tau=10 (district scale)": "gccm_convergence_tau10.png",
 }
 
 for config_label, paths in GCCM_DATA.items():
