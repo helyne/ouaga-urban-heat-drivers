@@ -41,15 +41,6 @@ add_to_zip \
     outputs/gccm/main_E3_tau1/results.csv \
     outputs/gccm/main_E3_tau1/summary.csv
 
-# Step 4: Add supplementary figures and tables (figures/* is gitignored)
-add_to_zip \
-    figures/pub/supplementary/figS1_spatial_features.png \
-    figures/pub/supplementary/figS2_methods_workflow.png \
-    figures/pub/supplementary/figS3_heatwave_analysis.png \
-    figures/pub/supplementary/figS4_pearson_correlation.png \
-    figures/pub/supplementary/hyperparameters.json \
-    figures/pub/supplementary/test_metrics.csv
-
 echo ""
 echo "Done. Contents:"
 unzip -l "$OUT" | tail -3
