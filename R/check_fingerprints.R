@@ -1,10 +1,7 @@
 source("R/gccm_config.R")
 
 dirs <- list(
-  "main (simplex E, tau=10)" = "outputs/gccm/main",
-  "E3_tau10" = "outputs/gccm/main_fixed_E3",
-  "E3_tau1"  = "outputs/gccm/main_E3_tau1",
-  "E3_tau5"  = "outputs/gccm/main_E3_tau5"
+  "main_E3_tau1 (publication run)" = "outputs/gccm/main_E3_tau1"
 )
 
 for (nm in names(dirs)) {

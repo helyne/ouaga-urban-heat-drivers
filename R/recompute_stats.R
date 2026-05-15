@@ -7,8 +7,8 @@
 # Does NOT load rasters, run simplex, or run GCCM.
 #
 # Usage:
-#   Rscript R/recompute_stats.R                                  # all 4 directories
-#   Rscript R/recompute_stats.R outputs/gccm/main_fixed_E3       # single directory
+#   Rscript R/recompute_stats.R                                  # publication run (main_E3_tau1)
+#   Rscript R/recompute_stats.R outputs/gccm/some_other_run      # custom directory
 #
 # Inputs (per output directory):
 #   checkpoints/gccm_*.rds   - raw rho-vs-libsize data (read-only)
@@ -79,10 +79,7 @@ fisher_z_ci <- function(r, n, level = 0.05) {
 # -- Configuration ------------------------------------------------------------
 
 DEFAULT_DIRS <- c(
-  "outputs/gccm/main",
-  "outputs/gccm/main_fixed_E3",
-  "outputs/gccm/main_E3_tau1",
-  "outputs/gccm/main_E3_tau5"
+  "outputs/gccm/main_E3_tau1"
 )
 
 args <- commandArgs(trailingOnly = TRUE)
