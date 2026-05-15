@@ -6,20 +6,21 @@
 # in Ouagadougou using the spEDM package (Lyu W., 2026; Gao et al., 2023).
 #
 # Usage:
-#   Rscript R/gccm_analysis.R                        # outputs/gccm/main/
-#   Rscript R/gccm_analysis.R --tau=5                # outputs/gccm/main/
-#   Rscript R/gccm_analysis.R --outdir=custom/path   # custom output directory
-#   Rscript R/gccm_analysis.R --fixed-E=3 --outdir=outputs/gccm/main_fixed_E3
-#   Rscript R/gccm_analysis.R --no-detrend --outdir=outputs/gccm/main_no_detrend
+#   Rscript R/gccm_analysis.R --fixed-E=3 --tau=1    # publication run -> outputs/gccm/main_E3_tau1/
+#   Rscript R/gccm_analysis.R --outdir=custom/path   # write to a custom directory
 #   Rscript R/gccm_analysis.R --tau=5 --preds=DEM,BSI --outdir=outputs/gccm/sensitivity/tau/tau5
-#   Rscript R/gccm_analysis.R --force                   # override fingerprint check
+#   Rscript R/gccm_analysis.R --force                # override fingerprint check
+#
+# The default --outdir is outputs/gccm/main_E3_tau1/ (the publication run).
+# If you intend to explore alternative parameters, pass --outdir explicitly to
+# avoid overwriting the canonical run.
 #
 # The script is resumable: intermediate results are checkpointed to
 # {outdir}/checkpoints/ as .rds files. Re-running skips completed steps.
 # Checkpoints include a parameter fingerprint — if you change parameters,
 # stale checkpoints are detected and recomputed automatically.
 #
-# Outputs (in outdir, default outputs/gccm/main/):
+# Outputs (in outdir, default outputs/gccm/main_E3_tau1/):
 #   summary.csv              - summary table with convergence tests
 #   results.csv              - convergence results with Fisher-z CIs
 #   convergence.png          - convergence plot grid with CI ribbons
@@ -144,8 +145,8 @@ e_label <- if (!is.null(FIXED_E)) sprintf("Efixed%d", FIXED_E) else sprintf("E%d
 RUN_LABEL <- sprintf("agg%d_tau%d_%s_%dpred",
                       AGG_FACTOR, TAU, e_label, length(PREDICTORS))
 
-# Output directory: --outdir overrides, default is outputs/gccm/main/
-RUN_DIR <- if (!is.null(CLI_OUTDIR)) CLI_OUTDIR else file.path("outputs", "gccm", "main")
+# Output directory: --outdir overrides, default is outputs/gccm/main_E3_tau1/
+RUN_DIR <- if (!is.null(CLI_OUTDIR)) CLI_OUTDIR else file.path("outputs", "gccm", "main_E3_tau1")
 CHECKPOINT_DIR <- file.path(RUN_DIR, "checkpoints")
 
 # -- Pre-flight fingerprint check ----------------------------------------------
