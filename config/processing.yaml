@@ -89,7 +89,11 @@ random_state: 42
 # -- GEE export (only needed if re-running the processing pipeline) ---------
 # Most people won't need to touch these. They control how data is computed
 # on Google Earth Engine and downloaded locally.
+#
+# To re-run Step 1 (GEE pipeline) yourself, replace the placeholders below with
+# your own GEE Cloud project ID and the asset paths where you have uploaded the
+# Ouagadougou boundary shapefile and the cleaned OSM roads (see data/README.md).
 
-ee_project: "412303396813"
-ee_boundary_asset: "projects/ee-helyne/assets/Ouaga_boundary"
-roads_asset: "projects/ee-helyne/assets/Ouaga_roads"
+ee_project: "<your-gee-project-id>"
+ee_boundary_asset: "projects/<your-gee-project>/assets/Ouaga_boundary"
+roads_asset: "projects/<your-gee-project>/assets/Ouaga_roads"

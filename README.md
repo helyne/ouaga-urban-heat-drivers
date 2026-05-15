@@ -20,7 +20,7 @@ Urban heat islands threaten fast-growing Sahelian cities, yet causal drivers of 
 
 - Python 3.11+
 - R >= 4.3 (for GCCM causal analysis only — see [`R/INSTALL.md`](R/INSTALL.md))
-- A [Google Earth Engine](https://earthengine.google.com/) account — **only required if re-running the GEE processing pipeline (Step 1 of [Reproducing the paper](#reproducing-the-paper)) from scratch.** Most reviewers can skip this; the pre-processed raster is available on Zenodo (see [Data access](#data-access)). If needed, free for research use — see the [GEE access guide](https://developers.google.com/earth-engine/guides/access) and [`notebooks/reference/GEE_setup.ipynb`](notebooks/reference/GEE_setup.ipynb) for setup.
+- A [Google Earth Engine](https://earthengine.google.com/) account — **only required if re-running the GEE processing pipeline (Step 1 of [Reproducing the paper](#reproducing-the-paper)) from scratch.** Skip this if just reproducing the figures; the pre-processed raster is available on Zenodo (see [Data access](#data-access)). If needed, free for research use - see the [GEE access guide](https://developers.google.com/earth-engine/guides/access) and [`notebooks/reference/GEE_setup.ipynb`](notebooks/reference/GEE_setup.ipynb) for setup.
 
 ### Setup
 
@@ -38,13 +38,13 @@ Urban heat islands threaten fast-growing Sahelian cities, yet causal drivers of 
    ```
    This installs the project in editable mode (registers `src/` as an importable package) and pulls all dependencies pinned in `requirements.txt`. To also install development dependencies (e.g. `pytest` for running the test suite), use `pip install -e ".[dev]"` instead.
 
-3. Download the archived raster and pre-fit models from Zenodo — see [Data access](#data-access) below. This is the standard reviewer path and avoids the GEE pipeline entirely.
+3. Download the archived raster and pre-fit models from Zenodo — see [Data access](#data-access) below. This avoids the GEE pipeline entirely.
 
 4. *(Only if re-running the GEE pipeline from scratch — Step 1 of [Reproducing the paper](#reproducing-the-paper))* Authenticate with Google Earth Engine:
    ```bash
    earthengine authenticate
    ```
-   Then initialize with your GEE cloud project ID. See [`notebooks/reference/GEE_setup.ipynb`](notebooks/reference/GEE_setup.ipynb) for a detailed walkthrough if this is your first time using GEE.
+   Then initialize with your GEE cloud project ID. See [`notebooks/reference/GEE_setup.ipynb`](notebooks/reference/GEE_setup.ipynb) for a detailed walkthrough if this is your first time using GEE. You will also need to edit `config/processing.yaml` (the `ee_project`, `ee_boundary_asset`, and `roads_asset` fields at the bottom) to point at your own GEE project and uploaded assets.
 
 ### Project structure
 
